@@ -399,3 +399,13 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .video-close{position:absolute;right:0;top:-44px;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
 @media (max-width:900px){.video-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.video-grid{grid-template-columns:1fr}}
+
+/* PC 와이드 화면: 콘텐츠 바깥 좌우 여백을 가장자리로 갈수록 은은하게 어둡게 */
+@media (min-width:1200px){
+  body::after{content:"";position:fixed;inset:0;z-index:45;pointer-events:none;
+    background:linear-gradient(90deg,
+      rgba(30,22,70,.16) 0,
+      rgba(30,22,70,0) calc(50% - 560px),
+      rgba(30,22,70,0) calc(50% + 560px),
+      rgba(30,22,70,.16) 100%)}
+}
