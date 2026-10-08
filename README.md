@@ -32,6 +32,7 @@ script.js       공용 스크립트
      ```
      이름: {{name}}
      연락처: {{phone}}
+     희망 상담 방식: {{contact_method}}
      이메일: {{email}}
      관심 과정: {{course}}
      최종 학력: {{education}}

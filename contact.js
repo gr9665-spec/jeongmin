@@ -30,9 +30,11 @@ if (form) {
     setStatus('');
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
-      if (typeof gtag === 'function') gtag('event', 'generate_lead', { course: form.course.value });
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { course: form.course.value, contact_method: (form.querySelector('input[name="contact_method"]:checked') || {}).value });
+      const method = (form.querySelector('input[name="contact_method"]:checked') || {}).value;
+      const via = { '카카오톡': '카카오톡으로 ', '전화': '전화로 ' }[method] || '';
+      setStatus('상담 신청이 접수되었습니다. 확인 후 ' + via + '순차적으로 연락드릴게요!', 'ok');
       form.reset();
-      setStatus('상담 신청이 접수되었습니다. 확인 후 순차적으로 답변드릴게요!', 'ok');
     } catch (err) {
       console.error(err);
       setStatus('전송에 실패했습니다. 잠시 후 다시 시도하시거나 카카오톡으로 문의해 주세요.', 'error');

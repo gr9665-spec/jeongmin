@@ -411,3 +411,12 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
       rgba(30,22,70,.12) calc(100% - (50% - 560px) * .45),
       rgba(30,22,70,.30) 100%)}
 }
+
+/* 상담폼 선택 버튼 (희망 상담 방식) */
+.choice-group{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{position:relative;cursor:pointer;display:block;margin:0!important}
+.choice input{position:absolute;opacity:0;width:1px;height:1px}
+.choice span{display:flex;align-items:center;justify-content:center;height:50px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);font-size:15.5px;font-weight:700;color:var(--sub);transition:all .15s ease}
+.choice:hover span{border-color:var(--violet)}
+.choice input:checked + span{border-color:var(--violet);background:var(--lilac);color:var(--violet-deep);box-shadow:0 0 0 3px rgba(91,75,158,.12)}
+.choice input:focus-visible + span{outline:2px solid var(--violet);outline-offset:2px}

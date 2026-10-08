@@ -21,7 +21,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 
@@ -59,6 +59,13 @@
       <div class="field">
         <label>연락처 <span class="req">*</span></label>
         <input type="tel" name="phone" placeholder="010-0000-0000" required>
+      </div>
+      <div class="field">
+        <label>희망 상담 방식 <span class="req">*</span></label>
+        <div class="choice-group" role="radiogroup" aria-label="희망 상담 방식">
+          <label class="choice"><input type="radio" name="contact_method" value="카카오톡" required><span>💬 카카오톡</span></label>
+          <label class="choice"><input type="radio" name="contact_method" value="전화"><span>📞 전화</span></label>
+        </div>
       </div>
       <div class="field">
         <label>이메일</label>
@@ -139,7 +146,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="script.js?v=17"></script>
-<script src="contact.js?v=17"></script>
+<script src="script.js?v=18"></script>
+<script src="contact.js?v=18"></script>
 </body>
 </html>
