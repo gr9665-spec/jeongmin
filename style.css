@@ -420,3 +420,8 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .choice:hover span{border-color:var(--violet)}
 .choice input:checked + span{border-color:var(--violet);background:var(--lilac);color:var(--violet-deep);box-shadow:0 0 0 3px rgba(91,75,158,.12)}
 .choice input:focus-visible + span{outline:2px solid var(--violet);outline-offset:2px}
+
+/* 푸터 사업자 정보 */
+.footer-biz{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:28px;padding-top:18px;border-top:1px solid rgba(221,217,238,.7);font-size:12.5px;color:#9B98B0;letter-spacing:-.01em}
+.footer-biz i{font-style:normal;color:#D3D0E2}
+@media (max-width:640px){.footer-biz{font-size:12px;gap:4px 8px}}
