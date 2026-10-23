@@ -11,9 +11,9 @@
   --paper:#F7F6F2;
   --ink:#1A2233;
   --sub:#5B6475;
-  --violet:#24406A;
-  --violet-deep:#14233D;
-  --blue:#2B4A75;
+  --violet:#2B5288;
+  --violet-deep:#1E3C68;
+  --blue:#335C94;
   --lilac:#EEF1F5;
   --line:#E2DED5;
   --gold:#A2803F;
@@ -316,7 +316,7 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .profile-photo{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#ECEAE4,#DCD8CF);box-shadow:0 18px 44px rgba(20,35,61,.18)}
 .profile-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
 .profile-photo::after{content:"";position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);pointer-events:none}
-.profile-badge{position:absolute;left:16px;bottom:16px;background:rgba(20,35,61,.92);color:#fff;font-size:13.5px;font-weight:800;padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+.profile-badge{position:absolute;left:16px;bottom:16px;background:rgba(30,60,104,.92);color:#fff;font-size:13.5px;font-weight:800;padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
 .profile-body h2{font-family:var(--display);font-size:clamp(26px,3.2vw,36px);line-height:1.4;margin-bottom:16px}
 .profile-body h2 em{font-style:normal;color:var(--violet)}
 .profile-body > p{color:var(--sub);margin-bottom:12px}
@@ -437,7 +437,7 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .logo-mark{border-radius:6px;box-shadow:none}
 .gnb a{border-radius:4px}
 .gnb .cta{background:var(--violet-deep)}
-.gnb .cta:hover{background:#0C1628}
+.gnb .cta:hover{background:#172F52}
 
 /* 섹션 라벨: 알약 칩 → 골드 라인 + 대문자 라벨 */
 .chip,.hero .chip{background:none;border:0;border-radius:0;box-shadow:none;padding:0;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--gold);margin-bottom:16px}
@@ -459,7 +459,7 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .btn{border-radius:6px;letter-spacing:-.01em}
 .btn:hover{transform:none}
 .btn-primary{background:var(--violet-deep);box-shadow:none}
-.btn-primary:hover{background:#0C1628}
+.btn-primary:hover{background:#172F52}
 .btn-ghost{border-color:#CFCAC0}
 .btn-ghost:hover{border-color:var(--violet-deep)}
 
@@ -500,7 +500,7 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .review .stars{color:var(--gold)}
 .profile-photo{border-radius:10px;box-shadow:0 14px 36px rgba(20,35,61,.14)}
 .profile-photo::after{border-radius:10px}
-.profile-badge{border-radius:4px;background:rgba(20,35,61,.92)}
+.profile-badge{border-radius:4px;background:rgba(30,60,104,.92)}
 .profile-body h2 em{color:var(--violet-deep);box-shadow:inset 0 -.2em 0 rgba(176,141,87,.32)}
 .profile-quote{border-left-color:var(--gold);color:var(--violet-deep)!important}
 .profile-tags span,.video-tag{border-radius:4px;background:var(--gold-soft);color:var(--violet-deep)}
@@ -525,3 +525,6 @@ th{background:#F1EEE7;color:var(--violet-deep)}
 .card h3,.step h4,.video-meta h3{letter-spacing:-.03em}
 .profile-quote{font-weight:600;letter-spacing:-.02em}
 .chip,.hero .chip{font-size:13px;letter-spacing:.04em;color:var(--gold)}
+
+/* v3.2 메인 제목 더 굵게 */
+.hero h1{font-weight:900;letter-spacing:-.055em}
