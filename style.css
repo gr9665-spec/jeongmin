@@ -16,9 +16,9 @@
   --blue:#335C94;
   --lilac:#EEF1F5;
   --line:#E2DED5;
-  --gold:#A2803F;
-  --gold-light:#C9A86A;
-  --gold-soft:#F4EEE3;
+  --gold:#C1994D;
+  --gold-light:#C1994D;
+  --gold-soft:#F6EFE2;
   --white:#FFFFFF;
   --kakao:#FEE500;
   --radius:8px;
@@ -361,16 +361,16 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .band-dark::after{width:300px;height:300px;left:-90px;bottom:-140px;background:rgba(255,255,255,.05)}
 .band-dark .container{position:relative;z-index:1}
 .band-dark .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:#fff}
-.band-dark .chip::before{background:#D6BA8A}
+.band-dark .chip::before{background:#C1994D}
 .band-dark .section-head h2{color:#fff}
-.band-dark .section-head h2::after{background:linear-gradient(90deg,#D6BA8A,#fff)}
+.band-dark .section-head h2::after{background:linear-gradient(90deg,#C1994D,#fff)}
 .band-dark .card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);counter-increment:why}
 .band-dark .card:hover{background:rgba(255,255,255,.14);box-shadow:0 16px 36px rgba(5,10,20,.3)}
 .band-dark .grid-3{counter-reset:why}
 .band-dark .card h3{color:#fff}
-.band-dark .card h3::before{content:"0" counter(why);display:block;font-family:var(--display);font-size:15px;color:#D6BA8A;margin-bottom:8px;-webkit-text-stroke:0}
+.band-dark .card h3::before{content:"0" counter(why);display:block;font-family:var(--display);font-size:15px;color:#C1994D;margin-bottom:8px;-webkit-text-stroke:0}
 .band-dark .card p{color:rgba(255,255,255,.82)}
-.band-dark .card p b{color:#E6CF9E}
+.band-dark .card p b{color:#E2C487}
 
 .band-review{background:linear-gradient(180deg,var(--paper) 0%,#F0EEE8 40%,#EEF0F2 75%,var(--paper) 100%)}
 .band-review .review{border-color:#E2DED5;box-shadow:0 10px 26px rgba(20,35,61,.07)}
@@ -451,8 +451,8 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .hero{background:var(--paper)}
 .hero::before{display:none}
 .hero h1{letter-spacing:-.02em;color:var(--violet-deep)}
-.hero h1 em{color:var(--violet-deep);border-bottom:0;box-shadow:inset 0 -.2em 0 rgba(176,141,87,.32)}
-.hl{background:linear-gradient(transparent 64%, rgba(176,141,87,.26) 64%);color:var(--violet-deep)}
+.hero h1 em{color:var(--violet-deep);border-bottom:0;box-shadow:inset 0 -.2em 0 rgba(193,153,77,.32)}
+.hl{background:linear-gradient(transparent 64%, rgba(193,153,77,.26) 64%);color:var(--violet-deep)}
 .page-head{background:var(--paper)}
 
 /* 버튼: 단색·각진 모서리·과한 그림자 제거 */
@@ -501,11 +501,11 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 .profile-photo{border-radius:10px;box-shadow:0 14px 36px rgba(20,35,61,.14)}
 .profile-photo::after{border-radius:10px}
 .profile-badge{border-radius:4px;background:rgba(30,60,104,.92)}
-.profile-body h2 em{color:var(--violet-deep);box-shadow:inset 0 -.2em 0 rgba(176,141,87,.32)}
+.profile-body h2 em{color:var(--violet-deep);box-shadow:inset 0 -.2em 0 rgba(193,153,77,.32)}
 .profile-quote{border-left-color:var(--gold);color:var(--violet-deep)!important}
 .profile-tags span,.video-tag{border-radius:4px;background:var(--gold-soft);color:var(--violet-deep)}
 .side-card{background:var(--gold-soft)}
-.side-card li{border-bottom-color:rgba(176,141,87,.28)}
+.side-card li{border-bottom-color:rgba(193,153,77,.28)}
 .cta-band{border-radius:10px}
 .cta-band .btn{color:var(--violet-deep)}
 .video-card,.review,details,.form-card,.table-wrap,.step{border-radius:var(--radius)}
