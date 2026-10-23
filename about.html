@@ -21,7 +21,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=23">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 
@@ -152,12 +152,30 @@
 
 <section class="section">
   <div class="container">
-    <div class="cta-band">
+    <div class="cta-band cta-form">
       <div>
         <h2>지금 나의 상황에서, 무엇부터 시작해야 할까요?</h2>
         <p>상담은 무료이며, 부담 없이 현재 상황만 알려주시면 됩니다.</p>
       </div>
-      <a href="contact.html" class="btn">무료 상담 신청하기</a>
+      <form class="quick-form" novalidate>
+        <div class="qf-grid">
+          <input type="text" name="name" placeholder="이름" aria-label="이름" required>
+          <input type="tel" name="phone" placeholder="연락처 (010-0000-0000)" aria-label="연락처" required>
+          <select name="course" aria-label="관심 과정" required><option value="">관심 과정 선택</option><option>편입·대학원·대졸자 전형 준비</option><option>보건계열(간호 등) 대학입시 준비</option><option>기사·산업기사 응시요건 준비</option><option>학사·전문학사 학위 취득</option><option>고득점 학습자료 지원</option><option>아직 잘 모르겠어요 (상담 후 결정)</option></select>
+          <div class="choice-group qf-choice" role="radiogroup" aria-label="희망 상담 방식">
+            <label class="choice"><input type="radio" name="contact_method" value="카카오톡" required><span>카카오톡</span></label>
+            <label class="choice"><input type="radio" name="contact_method" value="전화"><span>전화</span></label>
+          </div>
+        </div>
+        <label class="qf-agree"><input type="checkbox" required><span>상담 연락을 위한 개인정보(이름·연락처) 수집·이용에 동의합니다. 상담 목적 외에 사용하지 않으며 상담 종료 후 파기합니다.</span></label>
+        <input type="hidden" name="email" value="">
+        <input type="hidden" name="education" value="">
+        <input type="hidden" name="message" value="[하단 간편 상담 신청 · 정민쌤 소개]">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+        <button type="submit" class="btn qf-submit">무료 상담 신청하기</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="qf-more">자세한 상황을 남기고 싶다면 <a href="contact.html">상담 신청 페이지</a>를 이용해 주세요.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -186,7 +204,9 @@
   </div>
 </footer>
 
-<script src="script.js?v=23"></script>
-<script src="video.js?v=23"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js?v=24"></script>
+<script src="contact.js?v=24"></script>
+<script src="video.js?v=24"></script>
 </body>
 </html>

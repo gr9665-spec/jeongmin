@@ -528,3 +528,24 @@ th{background:#F1EEE7;color:var(--violet-deep)}
 
 /* v3.2 메인 제목 더 굵게 */
 .hero h1{font-weight:900;letter-spacing:-.055em}
+
+/* 하단 간편 상담 폼 (각 페이지 CTA 밴드 안) */
+.cta-form{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.cta-form > div:first-child p{max-width:24em}
+.quick-form{background:#fff;border-radius:var(--radius);padding:24px 24px 20px;color:var(--ink);box-shadow:0 14px 34px rgba(5,10,20,.18)}
+.qf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quick-form input[type=text],.quick-form input[type=tel],.quick-form select{width:100%;height:48px;padding:0 14px;border:1.5px solid var(--line);border-radius:6px;font-family:var(--body);font-size:15px;background:var(--paper);color:var(--ink)}
+.quick-form input:focus,.quick-form select:focus{outline:none;border-color:var(--violet-deep)}
+.qf-choice{gap:8px}
+.qf-choice .choice span{height:48px;font-size:14.5px}
+.qf-agree{display:flex;gap:8px;align-items:flex-start;margin:14px 0 14px;font-size:12.5px;line-height:1.5;color:var(--sub);cursor:pointer}
+.qf-agree input{margin-top:3px;flex:none}
+.cta-band .btn.qf-submit{width:100%;height:52px;background:var(--violet-deep);color:#fff;font-size:16px}
+.cta-band .btn.qf-submit:hover{background:#172F52}
+.quick-form .form-status{margin-top:10px;font-size:14px}
+.quick-form .form-status:empty{display:none}
+.qf-more{margin-top:10px;font-size:12.5px;color:var(--sub);text-align:center}
+.qf-more a{color:var(--violet-deep);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.cta-form .qf-more{opacity:1}
+@media (max-width:900px){.cta-form{grid-template-columns:1fr;gap:24px}}
+@media (max-width:640px){.qf-grid{grid-template-columns:1fr}.quick-form{padding:20px 16px 16px}}
