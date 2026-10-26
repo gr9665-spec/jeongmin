@@ -22,7 +22,17 @@ const recordSend = () => {
 };
 
 const consultForms = document.querySelectorAll('#consult-form, form.quick-form');
-if (consultForms.length && window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+if (consultForms.length && window.emailjs) emailjs.init({
+  publicKey: EMAILJS_PUBLIC_KEY,
+  blockHeadless: true,                              // 자동화(헤드리스) 브라우저 차단
+  limitRate: { id: 'jm-consult', throttle: 10000 }, // 같은 브라우저 10초에 1번
+  // init이 기본 저장소를 지워 limitRate가 꺼지는 SDK 동작 때문에 직접 지정
+  storageProvider: {
+    get: k => Promise.resolve(localStorage.getItem(k)),
+    set: (k, v) => Promise.resolve(localStorage.setItem(k, v)),
+    remove: k => Promise.resolve(localStorage.removeItem(k)),
+  },
+});
 
 consultForms.forEach(form => {
   const btn = form.querySelector('button[type="submit"]');
