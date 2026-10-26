@@ -5,6 +5,22 @@ const EMAILJS_PUBLIC_KEY  = 'xVaTKYvOPxMgiKij9';
 const EMAILJS_SERVICE_ID  = 'service_shm27ea';
 const EMAILJS_TEMPLATE_ID = 'template_m43vrz9';
 
+// 연속 제출 제한 — 같은 브라우저에서 24시간에 3번까지 (저장소가 막혀 있으면 이 페이지 안에서만 센다)
+const SEND_LIMIT = 3;
+const SEND_WINDOW = 24 * 3600e3;
+const SEND_KEY = 'jm_consult_sends';
+let sendMemory = [];
+const recentSends = () => {
+  let h = sendMemory;
+  try { h = JSON.parse(localStorage.getItem(SEND_KEY)) ?? sendMemory; } catch (e) { /* 저장소 불가 */ }
+  const now = Date.now();
+  return (Array.isArray(h) ? h : []).filter(t => typeof t === 'number' && now - t < SEND_WINDOW);
+};
+const recordSend = () => {
+  sendMemory = [...recentSends(), Date.now()];
+  try { localStorage.setItem(SEND_KEY, JSON.stringify(sendMemory)); } catch (e) { /* 저장소 불가 */ }
+};
+
 const consultForms = document.querySelectorAll('#consult-form, form.quick-form');
 if (consultForms.length && window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
@@ -23,6 +39,11 @@ consultForms.forEach(form => {
     if (!form.reportValidity()) return;
     if (form.website.value) return; // 스팸봇 차단
 
+    if (recentSends().length >= SEND_LIMIT) {
+      setStatus('오늘은 이미 여러 번 신청하셨어요. 추가 문의는 카카오톡으로 부탁드려요.', 'error');
+      return;
+    }
+
     if (!window.emailjs || EMAILJS_PUBLIC_KEY.startsWith('YOUR_')) {
       setStatus('상담 신청 기능을 준비 중입니다. 카카오톡으로 문의해 주세요.', 'error');
       return;
@@ -33,6 +54,7 @@ consultForms.forEach(form => {
     setStatus('');
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+      recordSend();
       if (typeof gtag === 'function') gtag('event', 'generate_lead', {
         course: form.course.value,
         contact_method: method(),
